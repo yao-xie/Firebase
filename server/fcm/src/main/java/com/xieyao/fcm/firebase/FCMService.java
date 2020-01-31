@@ -1,7 +1,8 @@
 package com.xieyao.fcm.firebase;
 
 import com.google.firebase.messaging.*;
-import com.xieyao.fcm.model.PushNotificationRequest;
+import com.xieyao.fcm.model.pushnotification.PushNotificationRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;

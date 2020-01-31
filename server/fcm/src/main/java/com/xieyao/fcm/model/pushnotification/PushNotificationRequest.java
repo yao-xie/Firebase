@@ -1,15 +1,14 @@
-package com.xieyao.fcm.model;
+package com.xieyao.fcm.model.pushnotification;
 
-public class PushNotificationRequest {
+import com.xieyao.fcm.model.Request;
+
+public class PushNotificationRequest extends Request{
 
 	private String title;
 	private String message;
 	private String topic;
 	private String token;
-
-	public PushNotificationRequest() {
-	}
-
+	
 	public PushNotificationRequest(String title, String messageBody, String topicName) {
 		this.title = title;
 		this.message = messageBody;

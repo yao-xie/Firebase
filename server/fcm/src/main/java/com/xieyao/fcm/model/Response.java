@@ -1,14 +1,14 @@
 package com.xieyao.fcm.model;
 
-public class PushNotificationResponse {
+public class Response {
 
 	private int status;
 	private String message;
 
-	public PushNotificationResponse() {
+	public Response() {
 	}
 
-	public PushNotificationResponse(int status, String message) {
+	public Response(int status, String message) {
 		this.status = status;
 		this.message = message;
 	}

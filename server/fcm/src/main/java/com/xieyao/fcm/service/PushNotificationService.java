@@ -13,7 +13,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import com.xieyao.fcm.firebase.FCMService;
-import com.xieyao.fcm.model.PushNotificationRequest;
+import com.xieyao.fcm.model.pushnotification.PushNotificationRequest;
 
 @Service
 public class PushNotificationService {
