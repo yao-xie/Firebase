@@ -24,6 +24,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.xieyao.fcm.db.DBHelper;
 import com.xieyao.fcm.model.Response;
+import com.xieyao.fcm.model.device.DeviceRegistrationRequest;
+import com.xieyao.fcm.model.device.DeviceRegistrationResponse;
 import com.xieyao.fcm.model.pushnotification.PushNotificationRequest;
 import com.xieyao.fcm.model.pushnotification.PushNotificationResponse;
 import com.xieyao.fcm.service.PushNotificationService;
@@ -61,11 +63,17 @@ public class PushNotificationController {
 		return new Response((int) counter.incrementAndGet(), String.format(template, name));
 	}
 
-	@RequestMapping("/db")
+	@RequestMapping("/testdb")
 	public String createDatabase() {
-//		DBHelper.getInstance().testDb();
 		DBHelper.testDb();
 		return "Sqlite3 database is created!";
+	}
+
+	@PostMapping("/device/register")
+	public ResponseEntity registerDevice(@RequestBody DeviceRegistrationRequest request) {
+		boolean isRegisted = DBHelper.registerDevice(request);
+		return new ResponseEntity<>(new DeviceRegistrationResponse(HttpStatus.OK.value(),
+				String.format("Device %s registered", isRegisted ? "is" : "is not")), HttpStatus.OK);
 	}
 
 	@PostMapping("/notification/topic")

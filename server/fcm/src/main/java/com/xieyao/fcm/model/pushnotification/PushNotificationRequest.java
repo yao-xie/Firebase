@@ -9,6 +9,10 @@ public class PushNotificationRequest extends Request{
 	private String topic;
 	private String token;
 	
+	public PushNotificationRequest() {
+		
+	}
+	
 	public PushNotificationRequest(String title, String messageBody, String topicName) {
 		this.title = title;
 		this.message = messageBody;
