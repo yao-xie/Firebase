@@ -14,3 +14,6 @@ curl -d '{"title":"Title:data", "message":"Send a message to a specific topic wi
 
 POST /notification/data/batch – Send message list to a specific topic.  
 curl -d '[{"title":"1.Title:topic", "message":"1.Send a message to a specific topic", "topic":"common"},{"title":"2.Title:topic", "message":"2.Send a message to a specific topic", "topic":"common"}]' -H "Content-Type: application/json" -X POST http://localhost:8080/notification/topic/batch
+
+POST /device/register – Send registration to server(including deviceId and token)
+curl -d '{"deviceId":"Advertising ID", "token":"tokenFromFirebaseSDK"}' -H "Content-Type: application/json" -X POST http://localhost:8080/device/register
